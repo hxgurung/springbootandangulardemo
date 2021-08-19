@@ -1,0 +1,38 @@
+
+          <p style="margin-left: 40px;font-weight: bold;">Listing Car</p>            
+          <table class="table table-bordered" style="margin-left: 40px;top: auto;">
+            <thead>
+              <tr>
+                <th>SNO</th> 
+                
+                <th>Make</th>
+                <th>Model</th>
+                <th>Color</th>
+                <th>Price</th>
+                <th>Photo</th>
+                <th>DOB</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let car of dcars;let i=index;">
+                <td>{{i+1}}</td>
+                
+                <td>{{car.make}}</td>
+                <td>{{car.model}}</td>
+                <td>{{car.color}}</td>
+                <td>{{car.price}}</td>
+                <td><img src="{{car.photo}}" style="height: 200px;"> </td>
+                <td>{{car.dob}}</td>
+                
+              </tr>
+            
+                    
+            </tbody>
+        </table>
+
+        <div style="margin-left: 20px;">
+            <input type="text" [(ngModel)]="tname"  name="tname" class="form-control" style="font-weight: bold;">
+          <hr/>
+            <button type="button" (click)="pushMessage();"  class="btn btn-danger">Push Message</button>
+          </div>        

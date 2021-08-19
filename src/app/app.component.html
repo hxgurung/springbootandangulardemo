@@ -1,43 +1,17 @@
 
-<app-header></app-header>
+<app-header [message]="pmessage"></app-header>
 
 <main class="container">
 
-  <h1 style="background-color: #fbfeff;">Cars Info</h1>
+  <h1 style="background-color: #ecfaff;">{{tpmessage}}</h1>
   <table style="height: 800px;">
      <tr>
-        <td style="width:200px;background-color: bisque;">
+        <td style="width:150px;background-color: bisque;">
             <app-leftbar></app-leftbar>
         </td>
         <td style="width: 900px;">
 
-          <p style="margin-left: 40px;font-weight: bold;">Listing Car</p>            
-          <table class="table table-bordered" style="margin-left: 40px;top: auto;">
-            <thead>
-              <tr>
-                <th>SNO</th> 
-                <th>Photo</th>
-                <th>Make</th>
-                <th>Model</th>
-                <th>Price</th>
-                <th>DOB</th>
-                
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let car of cars;let i=index;">
-                <td>{{i+1}}</td>
-                <td><img src="{{car.photo}}" style="height: 200px;"> </td>
-                <td>{{car.make}}</td>
-                <td>{{car.model}}</td>
-                
-                <td>{{car.price}}</td>
-                <td>{{car.dob}}</td>
-                
-              </tr>
-            
-            </tbody>
-          </table>
+         <app-car-list (messageToParent)="dooMessage($event)"  [parents]="cars"> </app-car-list>
 
 
         </td>
